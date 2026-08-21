@@ -1,5 +1,4 @@
 # kang-b2b-ux-auditor
-
 [![status](https://img.shields.io/badge/status-public%20release-2ea44f)](https://github.com/KanG-ciyuan/kang-b2b-ux-auditor/releases)
 [![version](https://img.shields.io/github/v/release/KanG-ciyuan/kang-b2b-ux-auditor?label=version)](https://github.com/KanG-ciyuan/kang-b2b-ux-auditor/releases)
 [![tests](https://img.shields.io/badge/local%20tests-1%20passed-2ea44f)](tests/)
@@ -43,4 +42,3 @@ Copyright (c) Kang. See [LICENSE](LICENSE).
 Maintained by Kang. GitHub: https://github.com/KanG-ciyuan/
 
 <!-- kang-author:end -->
-
