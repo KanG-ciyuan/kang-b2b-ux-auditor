@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kang B2B UX Auditor"
+  short_description: "审查 B2B 工作台任务清晰度和状态反馈"
+  default_prompt: "使用 $kang-b2b-ux-auditor 审查角色工作台的任务路径和可理解性。"
