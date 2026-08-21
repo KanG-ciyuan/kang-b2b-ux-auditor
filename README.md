@@ -1,8 +1,9 @@
 # kang-b2b-ux-auditor
+
 [![status](https://img.shields.io/badge/status-public%20release-2ea44f)](https://github.com/KanG-ciyuan/kang-b2b-ux-auditor/releases)
 [![version](https://img.shields.io/github/v/release/KanG-ciyuan/kang-b2b-ux-auditor?label=version)](https://github.com/KanG-ciyuan/kang-b2b-ux-auditor/releases)
 [![tests](https://img.shields.io/badge/local%20tests-1%20passed-2ea44f)](tests/)
-[![license](https://img.shields.io/badge/license-Kang%20terms-6f42c1)](LICENSE)
+[![license](https://img.shields.io/badge/license-MIT-6f42c1)](LICENSE)
 
 Kang 的 B2B SaaS UX 审查 Skill。用于检查不同角色能否理解“为什么进入、现在做什么、何时完成、交给谁”，以及状态反馈和权限导航是否清楚。
 
@@ -34,7 +35,7 @@ python3 ~/.codex/skills/kang-meta-skill/scripts/validate_skill.py ~/.codex/skill
 
 ## License
 
-Copyright (c) Kang. See [LICENSE](LICENSE).
+MIT. See [LICENSE](LICENSE). This is a reusable product-development agent Skill, separate from any private enterprise product.
 
 <!-- kang-author:start -->
 ## About Kang

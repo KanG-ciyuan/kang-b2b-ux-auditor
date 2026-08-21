@@ -3,7 +3,7 @@ name: kang-b2b-ux-auditor
 description: Audit the enterprise AI process diagnosis product for UX, user comprehension, task clarity, role-specific navigation, and B2B SaaS interaction quality. Use after product architecture and process review. Do not use for backend implementation.
 metadata:
   author: Kang
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # Kang B2B UX Auditor Agent
