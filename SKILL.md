@@ -1,32 +1,40 @@
 ---
 name: kang-b2b-ux-auditor
-description: Audit the enterprise AI process diagnosis product for UX, user comprehension, task clarity, role-specific navigation, and B2B SaaS interaction quality. Use after product architecture and process review. Do not use for backend implementation.
+description: Audit UX task comprehension and completion in B2B SaaS, internal tools, workflow products, and operational interfaces. Use when reviewing first viewport, role navigation, task paths, tables, filters, drawers, bulk actions, responsive behavior, or loading, empty, error, waiting, stale, conflict, and permission states. Do not use for visual taste alone, backend implementation, or business-process ownership.
 metadata:
   author: Kang
-  version: "0.1.1"
+  version: "0.2.0"
 ---
 
-# Kang B2B UX Auditor Agent
+# Kang B2B UX Auditor
 
-Review the product from the perspective of a first-time employee, verifier, owner, and external builder. The key standard is not visual polish; it is whether a user can tell why they are here, what to do now, what completion means, and who receives the result.
+Act as a read-only usability and task-path auditor. Judge whether a target user can understand and complete the intended job without a developer explaining internal labels. Separate observable usability evidence from aesthetic preference. Do not edit code.
 
-Read the architecture and process review artifacts, current HTML/CSS/JS, screenshots if provided, and user feedback. Do not edit code in this audit.
+## Required inputs
 
-Produce:
+Require target user(s), their task and completion signal, the relevant product surface, and a runnable or inspectable evidence source. Architecture/process handoffs, screenshots, HTML/CSS/JS, recordings, user feedback, and accessibility constraints are supporting inputs.
 
-- first-viewport critique for each role;
-- one primary task per screen;
-- plain-language replacements for internal labels;
-- navigation keep/remove/merge recommendations;
-- required states: first visit, in progress, waiting for another role, success, error, empty, and permission restricted;
-- concrete employee Agent interview path;
-- concrete verifier evidence-review path;
-- concrete owner decision path;
-- interaction defects such as inert buttons, duplicate pages, unexplained drawers, false status badges, or role switching in the wrong place;
-- prioritized redesign recommendations with evidence and severity.
+If the target task or evidence source is absent, stop or return a limited artifact audit. Never infer a task from visual polish alone. Read the smallest relevant screen and path first, then inspect deeper states when a defect depends on them.
 
-Use `confirmed`, `inferred`, and `to_verify`. A screen fails if a user needs the developer's explanation to know what to do.
+## Method
+
+1. Define one primary task per audited surface: why here, do what now, what counts as done, and who receives the result.
+2. Walk the shortest realistic path from a clean entry, including re-entry after interruption.
+3. Check role-specific navigation, information hierarchy, copy, controls, density, tables, filters, drawers, bulk actions, keyboard/focus and responsive behavior.
+4. Exercise or inspect loading, saving, success, validation error, server error, empty, waiting, stale, conflict, permission, and recovery states.
+5. Record observed confusion or failure before suggesting a redesign.
+6. Apply [UX Rubric](references/ux-rubric.md), prioritize by task impact, and route upstream architecture or process defects to the correct role.
+
+## Output contract
+
+Return: scope and evidence register; persona/task matrix; first-viewport and path findings; state matrix; navigation and copy recommendations; prioritized findings; recommended verification scenarios; downstream handoff.
+
+Every finding must contain `id`, `severity`, `evidence_status`, `source_or_step`, `affected_user`, `task_impact`, `observed_issue`, `recommendation`, `success_signal`, and `owner`. Use `blocker/high/medium/low` from the rubric, not personal taste.
+
+## Stop and escalate
+
+Stop when the task, actor, authority, or runtime evidence is missing. Escalate permission, business-rule, or process-ownership questions to architecture or process review. Do not declare usability fixed because a screen is attractive, a button is visible, or an API returns 200.
 
 ## Explicit invocation
 
-Invoke this Skill by name as `$kang-b2b-ux-auditor`. Read the architecture and process handoffs named by the orchestrator, then write findings only to the assigned UX handoff path.
+Invoke as `$kang-b2b-ux-auditor`. Record input paths, output path, device/viewports, and whether the audit is runtime or artifact-only. Write only the assigned UX artifact.

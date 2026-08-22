@@ -1,1 +1,28 @@
-{"recommended_threshold":0.3,"description_required_concepts":["UX","task","role"],"positive_concepts":{"UX":["UX","可理解性","工作台"],"task":["task","任务","第一步"],"role":["role","角色","员工"]},"negative_patterns":["写后端","翻译","不看任务路径"],"should_trigger":[{"text":"审查 B2B 工作台的角色任务路径和状态反馈","family":"ux"}],"should_not_trigger":[{"text":"实现后端 API","family":"backend"}],"near_neighbor":[{"text":"只评价品牌颜色，不看任务路径","family":"visual"}]}
+{
+  "recommended_threshold": 0.3,
+  "description_required_concepts": ["ux", "task", "role"],
+  "positive_concepts": {
+    "ux": ["UX", "可理解性", "工作台", "界面"],
+    "task": ["task", "任务", "第一步", "完成"],
+    "role": ["role", "角色", "用户", "岗位"],
+    "states": ["loading", "error", "empty", "等待", "权限"]
+  },
+  "negative_patterns": ["写后端", "翻译", "只评价颜色", "不看任务路径", "修复数据库"],
+  "should_trigger": [
+    {"text": "审查客服工单工作台首屏、批量处理、详情抽屉和空错等待状态", "family": "internal-tool"},
+    {"text": "审查游戏运营后台 UX 中人员配置活动、预览、送审、发布和回滚任务路径", "family": "game-ops"},
+    {"text": "检查 CRM 销售工作台的筛选、表格、详情和权限反馈", "family": "crm"},
+    {"text": "审查内容编辑 UX 从草稿到法务审阅的任务路径和失败恢复", "family": "content"},
+    {"text": "评估采购审批工作台 UX 的用户任务、角色和界面状态，让申请人在手机上补充材料和查看状态", "family": "approval"}
+  ],
+  "should_not_trigger": [
+    {"text": "实现后端 API", "family": "backend"},
+    {"text": "只评价品牌颜色是否高级，不看任务路径", "family": "visual-only"},
+    {"text": "修复 SQL 查询性能问题", "family": "database"}
+  ],
+  "near_neighbor": [
+    {"text": "重新定义销售、主管和财务能看到哪些模块和数据", "family": "product-architect"},
+    {"text": "事实核查失败后应该交给谁、依据什么证据退回", "family": "process-reviewer"},
+    {"text": "按作者、编辑、法务从干净入口验收投稿到发布", "family": "acceptance-auditor"}
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "cases": [
+    {
+      "id": "game-ops-path-audit",
+      "prompt": "使用 $kang-b2b-ux-auditor 审查运营后台配置活动、预览、送审、发布和回滚。",
+      "input_files": [],
+      "assertions": [
+        "Output evaluates the supplied operations path rather than player gameplay",
+        "Output includes task success, role navigation, and loading/error/empty/waiting/permission states",
+        "Every finding has observed step, task impact, recommendation, and success signal",
+        "Aesthetic preference is not presented as a blocker without task evidence"
+      ],
+      "human_notes": "Check whether a new operator can identify the next action and recover from a failed publish."
+    }
+  ]
+}
