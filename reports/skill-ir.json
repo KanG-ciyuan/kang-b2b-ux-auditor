@@ -1,17 +1,17 @@
 {
   "schema_version": "2.0.0-kang-lite",
-  "generated_at": "2026-08-21",
+  "generated_at": "2026-08-22",
   "package": {
     "name": "kang-b2b-ux-auditor",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "owner": "Kang",
     "maturity_tier": "production",
     "lifecycle_stage": null,
     "maintenance": {}
   },
   "intent": {
-    "description": "Audit the enterprise AI process diagnosis product for UX, user comprehension, task clarity, role-specific navigation, and B2B SaaS interaction quality. Use after product architecture and process review. Do not use for backend implementation.",
-    "job_to_be_done": "Audit the enterprise AI process diagnosis product for UX, user comprehension, task clarity, role-specific navigation, and B2B SaaS interaction quality. Use after product architecture and process review. Do not use for backend implementation.",
+    "description": "Audit UX task comprehension and completion in B2B SaaS, internal tools, workflow products, and operational interfaces. Use when reviewing first viewport, role navigation, task paths, tables, filters, drawers, bulk actions, responsive behavior, or loading, empty, error, waiting, stale, conflict, and permission states. Do not use for visual taste alone, backend implementation, or business-process ownership.",
+    "job_to_be_done": "Audit UX task comprehension and completion in B2B SaaS, internal tools, workflow products, and operational interfaces. Use when reviewing first viewport, role navigation, task paths, tables, filters, drawers, bulk actions, responsive behavior, or loading, empty, error, waiting, stale, conflict, and permission states. Do not use for visual taste alone, backend implementation, or business-process ownership.",
     "target_users": [
       "Kang operator"
     ],
@@ -22,13 +22,21 @@
   },
   "triggers": {
     "should_trigger": [
-      "审查 B2B 工作台的角色任务路径和状态反馈"
+      "审查客服工单工作台首屏、批量处理、详情抽屉和空错等待状态",
+      "审查游戏运营后台 UX 中人员配置活动、预览、送审、发布和回滚任务路径",
+      "检查 CRM 销售工作台的筛选、表格、详情和权限反馈",
+      "审查内容编辑 UX 从草稿到法务审阅的任务路径和失败恢复",
+      "评估采购审批工作台 UX 的用户任务、角色和界面状态，让申请人在手机上补充材料和查看状态"
     ],
     "should_not_trigger": [
-      "实现后端 API"
+      "实现后端 API",
+      "只评价品牌颜色是否高级，不看任务路径",
+      "修复 SQL 查询性能问题"
     ],
     "near_neighbor": [
-      "只评价品牌颜色，不看任务路径"
+      "重新定义销售、主管和财务能看到哪些模块和数据",
+      "事实核查失败后应该交给谁、依据什么证据退回",
+      "按作者、编辑、法务从干净入口验收投稿到发布"
     ]
   },
   "workflow": {
@@ -38,9 +46,12 @@
     "output_contract": []
   },
   "resources": {
-    "references": [],
+    "references": [
+      "references/ux-rubric.md"
+    ],
     "scripts": [],
     "evals": [
+      "evals/output_cases.json",
       "evals/trigger_cases.json"
     ],
     "reports": [
